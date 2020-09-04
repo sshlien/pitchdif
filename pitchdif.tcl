@@ -13,7 +13,7 @@ exec wish8.6 "$0" "$@"
 #
 # Most global variables are in the midi array.
 
-set midi(version) "0.174 August 20 2020"
+set midi(version) "0.175 September 04 2020"
 set midi(font_family) [font actual helvetica -family]
 set midi(font_size) 13
 set midi(font_weight) [font actual . -weight]
@@ -470,6 +470,8 @@ global midi
 if {![winfo exist .tools]} {tools_init}
 if {[winfo ismapped .tools] == 0} {pack .tools}
 set p .tools
+pack forget $p.can
+pack $p.t
 $p.t delete 1.0 end
 if {[info exist midi(abcfile)]} {
    $p.t insert end $midi(abcfile)
