@@ -1508,6 +1508,9 @@ proc pitchdif_init {} {
     }
 
 
+# make the script location the current directory in case
+# it was running from windows/system32 which is not writeable
+cd [file dirname $::argv0]
 pitchdif_init
 read_ini
 test $midi(procedure)
